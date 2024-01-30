@@ -1,6 +1,5 @@
 <?php namespace AppLogger\Logger;
 
-use Backend;
 use System\Classes\PluginBase;
 
 /**
@@ -21,5 +20,21 @@ class Plugin extends PluginBase
             'author' => 'AppLogger',
             'icon' => 'icon-leaf'
         ];
+    }
+
+    /**
+     * register method, called when the plugin is first registered.
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * boot method, called right before the request route.
+     */
+    public function boot()
+    {
+        //
     }
 }

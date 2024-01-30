@@ -2,5 +2,5 @@
 
 use AppUser\User\Http\Controllers\UserController;
 
-Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('appuser/user/register', [UserController::class, 'register']);
+Route::post('appuser/user/login', [UserController::class, 'login']);
