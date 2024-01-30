@@ -2,6 +2,7 @@
 
 namespace AppLogger\Logger\Models;
 
+use AppUser\User\Models\User;
 use Model;
 
 /**
@@ -20,4 +21,9 @@ class Logs extends Model
      * @var string table name
      */
     public $table = 'applogger_logger_logs';
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

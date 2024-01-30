@@ -21,7 +21,7 @@ return new class  extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->dateTime('datetime');
-            $table->string('username');
+            $table->foreignId('user_id')->constrained();
             $table->integer('delay');
         });
     }
