@@ -5,32 +5,35 @@ namespace AppUser\User\Http\Controllers;
 use AppUser\User\Models\User;
 use Backend\Classes\Controller;
 use Hash;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function register($request)
+    public function register(Request $request)
     {
         // Validácia dát
         $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:6',
-            'username' => 'required|string|unique:users',
+            'email' => 'required|email',
+            'age'=> 'required|integer',
+            'username' => 'required|string|unique:appuser_user_users',
+            'password' => 'required|string|min:6'
         ]);
 
         // Vytvorenie nového uzívateľa
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'age'=> $request->age,
             'username' => $request->username,
+            'password' => Hash::make($request->password),
             'token' => str_random(50), // Vytvorenie náhodného tokenu
         ]);
 
         return response()->json(['token' => $user->token]);
     }
 
-    public function login($request)
+    public function login(Request $request)
     {
         // Validácia dát
         $request->validate([

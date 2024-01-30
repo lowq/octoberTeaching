@@ -12,28 +12,35 @@ class LogsController extends Controller
     public function create(Request $request)
     {
         $data = $request->validate([
-            'user_id' => 'required|integer',
             'delay' => 'required|integer',
         ]);
 
+        info('data:', ['data' => $data]);
+
         $log = Logs::create([
             'datetime' => now(),
-            'user_id' => $data['user_id'],
+            'appuser_user_users_id' => $request->user->id,
             'delay' => $data['delay'],
         ]);
 
         return response()->json($log, 201);
     }
 
-    public function getAllLogs($request)
+    public function getAllLogs(Request $request)
     {
-        $logs = Logs::where('user_id', $request->user->id)->all();
+        $logs = Logs::where('appuser_user_users_id', $request->user->id)->get();
         return response()->json($logs);
     }
 
     public function getLogByUsername($username)
     {
-        $logs = User::where('username', $username)->hasMany(Logs::class);
+        $user = User::where('username', $username)->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $logs = Logs::where('appuser_user_users_id', $user->id)->get();
         return response()->json($logs);
     }
 }

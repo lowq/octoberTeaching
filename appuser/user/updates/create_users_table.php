@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('age');
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('token')->nullable();
+            $table->string('token')->nullable()->unique();
             $table->timestamps();
         });
     }

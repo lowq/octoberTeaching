@@ -12,8 +12,6 @@ use Model;
  */
 class User extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-
     /**
      * @var string table name
      */
