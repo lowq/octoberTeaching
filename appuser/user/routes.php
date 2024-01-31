@@ -2,5 +2,8 @@
 
 use AppUser\User\Http\Controllers\UserController;
 
-Route::post('appuser/user/register', [UserController::class, 'register']);
-Route::post('appuser/user/login', [UserController::class, 'login']);
+
+Route::group(['prefix' => 'appuser/user'], function () {
+    Route::post('/register', [UserController::class, 'register']);
+    Route::post('/login', [UserController::class, 'login']);
+});
