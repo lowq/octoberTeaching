@@ -18,10 +18,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appchat_chat_chat_user', function (Blueprint $table) {
+        Schema::table('appchat_chat_chat_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->foreignId('appchat_chat_chats_id')->unsigned();
-            $table->foreignId('appuser_user_users_id')->unsigned();
+            $table->integer('appchat_chat_chats_id')->unsigned();
+            $table->integer('appuser_user_users_id')->unsigned();
         });
     }
 

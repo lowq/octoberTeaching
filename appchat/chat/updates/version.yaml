@@ -1,5 +1,5 @@
 v1.0.1: First version of Chat
-v1.0.2: Updated tables
+v1.0.2:
   - create_chats_table.php
   - create_emoji_table.php
   - create_messages_table.php

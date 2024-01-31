@@ -12,6 +12,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    public $require = ['AppUser.User'];
     /**
      * pluginDetails about this plugin.
      */

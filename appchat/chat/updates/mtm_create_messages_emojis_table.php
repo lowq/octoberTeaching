@@ -18,11 +18,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appchat_chat_messages_emojis', function (Blueprint $table) {
+        Schema::table('appchat_chat_messages_emojis', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('count')->default(0);
-            $table->foreignId('appchat_chat_messages_id')->unsigned();
-            $table->foreignId('appchat_chat_emoji_id')->unsigned();
+            $table->integer('appchat_chat_messages_id')->unsigned();
+            $table->integer('appchat_chat_emoji_id')->unsigned();
         });
     }
 

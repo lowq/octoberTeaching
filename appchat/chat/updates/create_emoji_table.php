@@ -1,4 +1,6 @@
-<?php namespace AppChat\Chat\Updates;
+<?php
+
+namespace AppChat\Chat\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
@@ -16,8 +18,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appchat_chat_emoji', function(Blueprint $table) {
+        Schema::create('appchat_chat_emoji', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('icon');
             $table->timestamps();
         });
     }

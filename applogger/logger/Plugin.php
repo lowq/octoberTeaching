@@ -1,4 +1,6 @@
-<?php namespace AppLogger\Logger;
+<?php
+
+namespace AppLogger\Logger;
 
 use System\Classes\PluginBase;
 
@@ -9,6 +11,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    public $require = ['AppUser.User'];
     /**
      * pluginDetails about this plugin.
      */

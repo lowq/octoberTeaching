@@ -18,9 +18,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('    ', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('appchat_chat_chats', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('name');
         });
     }
 
