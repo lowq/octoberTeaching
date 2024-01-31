@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appchat_chat_chat_emojis');
+        Schema::dropIfExists('appchat_chat_messages_emojis');
     }
 };

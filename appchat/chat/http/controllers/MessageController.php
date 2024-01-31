@@ -27,14 +27,16 @@ class MessageController extends Controller
             $newMessage = Message::create(
                 [
                     'fileId' => $uploadedFile->id,
-                    'appchat_chat_chats_id' => $message['chatId']
+                    'appchat_chat_chats_id' => $message['chatId'],
+                    'appuser_user_users_id' => $request->user->id,
                 ]
             );
         } else {
             $newMessage = Message::create(
                 [
                     'message' => $message['message'],
-                    'appchat_chat_chats_id' => $message['chatId']
+                    'appchat_chat_chats_id' => $message['chatId'],
+                    'appuser_user_users_id' => $request->user->id,
                 ]
             );
         }
