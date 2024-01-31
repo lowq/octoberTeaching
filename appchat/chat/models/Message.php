@@ -33,7 +33,7 @@ class Message extends Model
     public $belongsToMany = [
         'emojis' => [
             'AppChat\Chat\Models\Emoji', 'table' => 'appchat_chat_messages_emojis',
-            'key' => 'appchat_chat_message_id',
+            'key' => 'appchat_chat_messages_id',
             'otherKey' => 'appchat_chat_emoji_id'
         ], 'pivot' => ['count']
     ];

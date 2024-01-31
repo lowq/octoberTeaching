@@ -25,8 +25,9 @@ class Chat extends Model
 
     public $belongsToMany = [
         'users' => [
-            'AppUser\User\Models\User', 'table' => 'appchat_chat_chat_user',
-            'key' => 'appchat_chat_chat_id',
+            'AppUser\User\Models\User',
+            'table' => 'appchat_chat_chat_user',
+            'key' => 'appchat_chat_chats_id',
             'otherKey' => 'appuser_user_users_id'
         ]
     ];

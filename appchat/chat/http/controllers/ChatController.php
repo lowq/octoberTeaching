@@ -33,6 +33,10 @@ class ChatController extends Controller
     {
         $user = User::where('id', $request->user->id)->first();
 
-        return response()->json($user->chats);
+        if ($user->chats()->count() > 0) {
+            return response()->json($user->chats);
+        } else {
+            return response()->json();
+        }
     }
 }

@@ -34,9 +34,10 @@ class User extends Model
 
     public $belongsToMany = [
         'chats' => [
-            'AppChat\Chat\Models\Chat', 'table' => 'appchat_chat_chat_user',
+            'AppChat\Chat\Models\Chat',
+            'table' => 'appchat_chat_chat_user',
             'key' => 'appuser_user_users_id',
-            'otherKey' => 'appchat_chat_chat_id'
+            'otherKey' => 'appchat_chat_chats_id'
         ]
     ];
 }
