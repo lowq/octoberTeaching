@@ -15,8 +15,6 @@ class LogsController extends Controller
             'delay' => 'required|integer',
         ]);
 
-        info('data:', ['data' => $data]);
-
         $log = Logs::create([
             'datetime' => now(),
             'appuser_user_users_id' => $request->user->id,

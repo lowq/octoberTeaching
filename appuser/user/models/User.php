@@ -31,4 +31,8 @@ class User extends Model
     {
         return $this->hasMany(Logs::class);
     }
+
+    public $belongsToMany = [
+        'chats' => ['AppChat\Chat\Models\Chat', 'table' => 'appchat_chat_chat_user']
+    ];
 }
