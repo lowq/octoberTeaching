@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('text')->nullable();
             $table->integer('fileId')->nullable();
             $table->foreignId('appchat_chat_chats_id')->constrained();
+            $table->foreignId('appuser_user_users_id')->constrained();
             $table->timestamps();
         });
     }

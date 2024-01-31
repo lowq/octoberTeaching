@@ -5,3 +5,6 @@ v1.0.2:
   - create_messages_table.php
   - mtm_create_chat_user_table.php
   - mtm_create_chat_user_table.php
+v1.0.3:
+  - Add relation to message
+  - create_messages_table.php

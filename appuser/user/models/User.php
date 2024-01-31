@@ -2,6 +2,7 @@
 
 namespace AppUser\User\Models;
 
+use AppChat\Chat\Models\Message;
 use AppLogger\Logger\Models\Logs;
 use Model;
 
@@ -30,6 +31,11 @@ class User extends Model
     public function logs()
     {
         return $this->hasMany(Logs::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 
     public $belongsToMany = [

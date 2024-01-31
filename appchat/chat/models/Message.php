@@ -2,6 +2,7 @@
 
 namespace AppChat\Chat\Models;
 
+use AppUser\User\Models\User;
 use Model;
 
 /**
@@ -23,11 +24,16 @@ class Message extends Model
      */
     public $rules = [];
 
-    protected $fillable = ['text', 'fileId', 'appchat_chat_chats_id'];
+    protected $fillable = ['text', 'fileId', 'appchat_chat_chats_id', 'appuser_user_users_id'];
 
     public function chat()
     {
         return $this->belongsTo(Chat::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public $belongsToMany = [
