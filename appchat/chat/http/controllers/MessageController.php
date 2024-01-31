@@ -2,6 +2,7 @@
 
 namespace AppChat\Chat\Http\Controllers;
 
+use AppChat\Chat\Models\Chat;
 use AppChat\Chat\Models\Message;
 use AppUser\User\Models\User;
 use Backend\Classes\Controller;
@@ -39,13 +40,6 @@ class MessageController extends Controller
         }
 
         return response()->jsnon($newMessage);
-    }
-
-    public function getAllMessages(Request $request)
-    {
-        $user = User::where('id', $request->user->id)->first();
-
-        return response()->json($user->chats->messages);
     }
 
     public function getFile(Request $request)

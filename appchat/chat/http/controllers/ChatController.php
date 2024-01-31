@@ -23,8 +23,7 @@ class ChatController extends Controller
         $partnerUser = User::where('id', $data['chatPartner'])->first();
         $creatingUser = User::where('id', $request->user->id)->first();
 
-        $chat->users->attach($partnerUser);
-        $chat->users->attach($creatingUser);
+        $chat->users()->attach([$partnerUser->id, $creatingUser->id]);
 
         return response()->json($chat);
     }
@@ -33,10 +32,6 @@ class ChatController extends Controller
     {
         $user = User::where('id', $request->user->id)->first();
 
-        if ($user->chats()->count() > 0) {
-            return response()->json($user->chats);
-        } else {
-            return response()->json();
-        }
+        return response()->json($user->chats);
     }
 }

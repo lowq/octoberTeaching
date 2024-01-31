@@ -18,6 +18,7 @@ class Emoji extends Model
      */
     public $table = 'appchat_chat_emoji';
 
+    public $timestamps = false;
     /**
      * @var array rules for validation
      */

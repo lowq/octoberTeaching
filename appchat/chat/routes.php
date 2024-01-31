@@ -12,5 +12,4 @@ Route::post('appchat/chat/setEmojiToMessage', [EmojiController::class, 'setEmoji
 Route::post('appchat/chat/removeEmojiToMessage', [EmojiController::class, 'removeOneEmojiToMessage'])->middleware('userAutheticate');
 
 Route::post('appchat/chat/message', [MessageController::class, 'create'])->middleware('userAutheticate');
-Route::get('appchat/chat/message', [MessageController::class, 'getAllMessages'])->middleware('userAutheticate');
 Route::get('appchat/chat/getFile', [MessageController::class, 'getFile'])->middleware('userAutheticate');
